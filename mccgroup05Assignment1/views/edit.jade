@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    h1 Edit Event
+    div(align='right',style='padding-right: 10px;')
+      a(href='/home') Home
+      | &nbsp; | &nbsp;
+      a(href='/search') Search
+      | &nbsp; | &nbsp;
+      a(href='/signout') Sign Out
+      br
+    // Wrapper
+    #wrapper
+        // User INFO
+        
+        #user
+            h21 User Info
+            p
+                strong Email:
+                |  #{user.email}
+                br
+                strong First Name:
+                |  #{user.firstName}
+                br
+                strong Last Name:
+                |  #{user.lastName}
+                br
+                strong Username:
+                |  #{user.username}
+        // /User INFO
+        // EDIT EVENT
+        div
+            h2 Edit Event
+            form(action='/save_editevent/'+events[0]._id, method='POST')
+                input(type='hidden', name='_method' value='PUT')  
+                input(type='date', name='date', placeholder='Date',required, autofocus, value="#{events[0].date}")
+                input(type='time', name='starttime', placeholder='Start Time', required, value='#{events[0].starttime}')
+                input(type='time', name='endtime' , placeholder='End Time', required, value='#{events[0].endtime}')
+                input(type='text', name='description', class='text-left new-account', placeholder='Description', required, value='#{events[0].description}', size='64')
+                input(type='text', name='place', class='text-left new-account',placeholder='Location',required, autofocus, value="#{events[0].place}", size='40')
+                button(type='submit', class='text-center new-account') Edit Event
+                br
+                span.clearfix
+        // /EDIT EVENT
+
+
+    // /WRAPPER
