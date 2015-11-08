@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  meta(charset='utf-8')
+  link(rel='stylesheet', href='http://fullcalendar.io/js/fullcalendar-2.4.0/lib/cupertino/jquery-ui.min.css')
+  link(href='http://fullcalendar.io/js/fullcalendar-2.4.0/fullcalendar.css', rel='stylesheet')
+  link(href='http://fullcalendar.io/js/fullcalendar-2.4.0/fullcalendar.print.css', rel='stylesheet', media='print')
+  script(src='http://fullcalendar.io/js/fullcalendar-2.4.0/lib/moment.min.js')
+  script(src='http://fullcalendar.io/js/fullcalendar-2.4.0/lib/jquery.min.js')
+  script(src='http://fullcalendar.io/js/fullcalendar-2.4.0/fullcalendar.min.js')
+  script(src='/javascripts/calendar.js')
+  #container(style="background-color:#fff")
+  nav.navbar.navbar-inverse(style="border-color: #b0bcd5;margin-bottom: 2px;")
+    .container-fluid(style="background-color:#b0bcd5")
+      div
+        ul.nav.navbar-nav
+          li
+            a(href='/home') Home
+          li
+            a(href='/search') Search
+          li.active
+            a(href='/calendarview') Calendar View
+          li
+            a(href='/fromgoogle') Sync From Google
+          li
+              a(href='/togoogle') Sync To Google
+          li
+            a(href='/signout') Sign Out
+  body
+    div.well(style="background-color:#b0bcd5")
+      #calendar

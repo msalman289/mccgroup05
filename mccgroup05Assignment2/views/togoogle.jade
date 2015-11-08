@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    #container(style="background-color:#fff")
+    nav.navbar.navbar-inverse(style="border-color: #b0bcd5;margin-bottom: 2px;")
+        .container-fluid(style="background-color:#b0bcd5")
+            div
+                ul.nav.navbar-nav
+                    li
+                        a(href='/home') Home
+                    li
+                        a(href='/search') Search
+                    li
+                        a(href='/calendarview') Calendar View
+                    li
+                        a(href='/fromgoogle') Sync From Google
+                    li.active
+                        a(href='/togoogle') Sync To Google
+                    li
+                        a(href='/signout') Sign Out
+                    li.hidden
+                        a(href='/google', onclick='signOut();') Google Sign Out
+                            img(src='https://mail.google.com/mail/u/0/?logout&hl=en')
+    
+    div.well(style="background-color:#b0bcd5")
+        #authorize-div(style='display: none')
+            b Authorize access to Google Calendar API
+            br
+            button#authorize-button(onclick='handleAuthClick(event)' style="padding-left: 110px;padding-right: 110px;")
+                | Authorize
+        br
+        br
+        pre#output.
+        br
+
+    script(src='/javascripts/togoogle.js')
+    script(src='https://apis.google.com/js/client.js?onload=checkAuth')

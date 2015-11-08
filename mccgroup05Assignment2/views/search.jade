@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    script(src='/javascripts/search.js')
+    #container
+    nav.navbar.navbar-inverse(style="border-color: #b0bcd5;margin-bottom: 2px;")
+        .container-fluid(style="background-color:#b0bcd5")
+            div
+                ul.nav.navbar-nav
+                    li
+                        a(href='/home') Home
+                    li.active
+                        a(href='/search') Search
+                    li
+                        a(href='/calendarview') Calendar View
+                    li
+                        a(href='/fromgoogle') Sync From Google
+                    li
+                        a(href='/togoogle') Sync To Google
+                    li
+                        a(href='/signout') Sign Out
+
+    div.well(style="background-color:#b0bcd5")
+        
+        div.row
+            div.col-sm-3
+                h2 User Info
+                br
+                #userinfo(style="background-color:#d7ddea;padding-left: 4px;padding-top: 4px;padding-bottom: 4px;padding-right: 4px;")
+            
+            div.col-sm-8
+                h2 Search Event
+                br
+                #searchevent
+                br
+                h2 Event Info
+                #events

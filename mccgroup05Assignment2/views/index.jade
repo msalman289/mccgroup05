@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	script(src='https://apis.google.com/js/platform.js', async defer)
+	script(src='/javascripts/login.js')
+	meta(name='google-signin-client_id', content='881009523267-lepq189fan9eim5go4gn310sme54t4n1.apps.googleusercontent.com')
+	div.container
+		div.row
+			div.col-sm-6.col-md-4.col-md-offset-4
+				h1.text-center.login-title Sign in to Calendar App
+					div.account-wall
+						img(class='profile-img', src='http://localhost:3000/images/calendar.jpg')
+						#loginUser
+							
+					#signupUser
+						
