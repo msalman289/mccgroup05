@@ -12,7 +12,7 @@ var event1 = [];
 $(document).ready(function() {
   // Your Client ID can be retrieved from your project in the Google
   // Developer Console, https://console.developers.google.com
-  $('#container').html('<div><img class="center-block" src="http://localhost:3000/images/calendar365.png" style="align-center"/></div>');
+  $('#container').html('<div><img class="center-block" src="http://130.233.42.186:3000/images/calendar365.png" style="align-center"/></div>');
   checkAuth();
 }); 
 
@@ -110,7 +110,7 @@ function addEventsToGoogle() {
           $.ajax({
             type: 'PUT',
             data: editevent,
-            url: 'http://localhost:3000/updategoogleeventid/'+e_id
+            url: 'http://130.233.42.186:3000/updategoogleeventid/'+e_id
           }).done(function( response ) {
             if (response.success) {
             }
@@ -159,7 +159,7 @@ function addEventsToGoogle() {
                     // delete E_id from local DB as that event is cancelled from Google Calendar
                     $.ajax({
                         type: 'DELETE',
-                        url: 'http://localhost:3000/deleteevent/' + e_id
+                        url: 'http://130.233.42.186:3000/deleteevent/' + e_id
                     }).done(function( response ) {
                         if (response) {
                            appendPre('Event with description: "' + response.description + '" is deleted from Local  calendar as that event is cancelled in Google Calendar.');

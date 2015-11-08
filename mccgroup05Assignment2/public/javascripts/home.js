@@ -9,7 +9,7 @@ $(document).ready(function() {
 	$.getJSON( '/userinfo', function( data ) {
 		user   = data;
 		
-		$('#container').html('<div><img class="center-block" src="http://localhost:3000/images/calendar365.png" style="align-center"/></div>');
+		$('#container').html('<div><img class="center-block" src="http://130.233.42.186:3000/images/calendar365.png" style="align-center"/></div>');
         
         $('#userinfo').html('<p><b>Email: </b>' + user.email + '<br><b>First Name: </b>' + user.firstName + '<br><b>Last Name: </b>' + user.lastName +'<br><b>User Name: </b>'+user.username+'<br></p>');
         
@@ -47,7 +47,7 @@ function addEvent(event) {
 		$.ajax({
 			type: 'POST',
 			data: newEvent,
-			url: 'http://localhost:3000/adduserevent',
+			url: 'http://130.233.42.186:3000/adduserevent',
 			dataType: 'JSON'
 		}).done(function( response ) {
 			if (response) {
@@ -84,8 +84,8 @@ function populateEventListTable() {
 				tableContent += '<td>' + this.endtime + '</td>';
 				tableContent += '<td>' + this.place + '</td>';
 				tableContent += '<td>' + this.description + '</td>';
-				tableContent += '<td><a href="#" class="linkeditevent" rel="' + this._id + '"><img src="http://localhost:3000/images/edit2.png" style="width:30px;height:30px;"/></a></td>';
-				tableContent += '<td><a href="#" class="linkdeleteevent" rel="' + this._id + '"><img src="http://localhost:3000/images/delete2.png" style="width:30px;height:30px;"/></a></td>';
+				tableContent += '<td><a href="#" class="linkeditevent" rel="' + this._id + '"><img src="http://130.233.42.186:3000/images/edit2.png" style="width:30px;height:30px;"/></a></td>';
+				tableContent += '<td><a href="#" class="linkdeleteevent" rel="' + this._id + '"><img src="http://130.233.42.186:3000/images/delete2.png" style="width:30px;height:30px;"/></a></td>';
 				tableContent += '</tr>';
 				index++;
 			});
@@ -124,7 +124,7 @@ function deleteEvent(event) {
     if (confirmation === true) {
         $.ajax({
             type: 'DELETE',
-            url: 'http://localhost:3000/deleteevent/' + $(this).attr('rel')
+            url: 'http://130.233.42.186:3000/deleteevent/' + $(this).attr('rel')
         }).done(function( response ) {
             // Check for a successful response
             if (response) {

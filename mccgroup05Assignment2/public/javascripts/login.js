@@ -33,7 +33,7 @@ function loginUser(event) {
         $.ajax({
             type: 'POST',
             data: loginuser,
-            url: 'http://localhost:3000/login'
+            url: 'http://130.233.42.186:3000/login'
         }).done(function( response ) {
             if(response.success){
 				window.location.href = response.url;
@@ -55,7 +55,7 @@ function signupUser(event) {
 	// Use AJAX to Get the object to our SignUp service
 	$.ajax({
 		type: 'GET',
-		url: 'http://localhost:3000/signup'
+		url: 'http://130.233.42.186:3000/signup'
 	}).done(function( response ) {
 		if (response.success) {
 			window.location.href = response.url;

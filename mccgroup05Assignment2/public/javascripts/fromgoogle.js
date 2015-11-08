@@ -13,7 +13,7 @@ var till   = '';
 $(document).ready(function() {
   // Your Client ID can be retrieved from your project in the Google
   // Developer Console, https://console.developers.google.com
-  $('#container').html('<div><img class="center-block" src="http://localhost:3000/images/calendar365.png" style="align-center"/></div>');
+  $('#container').html('<div><img class="center-block" src="http://130.233.42.186:3000/images/calendar365.png" style="align-center"/></div>');
   checkAuth();
 }); 
 
@@ -114,7 +114,7 @@ function listUpcomingEvents() {
             $.ajax({
               type: 'PUT',
               data: editevent,
-              url: 'http://localhost:3000/save_editevent1/'+ data1[0].googleeventid
+              url: 'http://130.233.42.186:3000/save_editevent1/'+ data1[0].googleeventid
             }).done(function( response ) {
               if (response.success) {
 
@@ -147,7 +147,7 @@ function listUpcomingEvents() {
             $.ajax({
               type: 'POST',
               data: newEvent,
-              url: 'http://localhost:3000/adduserevent',
+              url: 'http://130.233.42.186:3000/adduserevent',
               dataType: 'JSON'
             }).done(function( response ) {
               if (response) {

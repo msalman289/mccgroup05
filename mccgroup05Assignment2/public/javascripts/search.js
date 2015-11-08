@@ -10,7 +10,7 @@ $(document).ready(function() {
 	$.getJSON( '/userinfo', function( data ) {
 		user   = data;
 		
-		$('#container').html('<div><div><img class="center-block" src="http://localhost:3000/images/calendar365.png" style="align-center"/></div></div>');
+		$('#container').html('<div><div><img class="center-block" src="http://130.233.42.186:3000/images/calendar365.png" style="align-center"/></div></div>');
         
         $('#userinfo').html('<p><b>Email: </b>' + user.email + '<br><b>First Name: </b>' + user.firstName + '<br><b>Last Name: </b>' + user.lastName +'<br><b>User Name: </b>'+user.username+'<br></p>');
         
@@ -37,7 +37,7 @@ function searchEvent(event) {
 	$.ajax({
 		type: 'GET',
 		data: searchEvent,
-		url: 'http://localhost:3000/searchevent',
+		url: 'http://130.233.42.186:3000/searchevent',
 		dataType: 'JSON'
 	}).done(function( response ) {
 		if (response) {
