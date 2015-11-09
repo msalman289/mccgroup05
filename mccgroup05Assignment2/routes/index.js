@@ -33,12 +33,12 @@ var isValid = function (req, res, next) {
 
 module.exports = function(passport){
 
-  // Index Page  i.e. http://130.233.42.186:3000/
+  // Index Page  i.e. http://130.233.42.186:8080/
   router.get('/', function(req, res) {
     res.render('index', {});
   });
   
-  // Search Page i.e. http://130.233.42.186:3000/search
+  // Search Page i.e. http://130.233.42.186:8080/search
   router.get('/search', isValid, function(req, res) {
     	res.render('search', {});
   });
@@ -66,7 +66,7 @@ module.exports = function(passport){
     res.json({"success":false, "message": "Entered wrong credentials or user already exist."});
   });
   
-  // Register Page i.e. http://130.233.42.186:3000/register
+  // Register Page i.e. http://130.233.42.186:8080/register
   router.get('/register', function(req, res){
     res.render('register',{});
   });
@@ -74,7 +74,7 @@ module.exports = function(passport){
   // Signup Post 
   router.post('/signup', passport.authenticate('signup', { successRedirect: '/validUser', failureRedirect: '/signup1', failureFlash : true }));
  
-  // Home Page i.e. http://130.233.42.186:3000/home
+  // Home Page i.e. http://130.233.42.186:8080/home
   router.get('/home', isValid, function(req, res){
 	res.render('home', {});
   });

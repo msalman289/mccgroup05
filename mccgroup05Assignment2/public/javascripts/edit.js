@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 	
 	$.getJSON( '/eventinfo/'+eventID, function( data ) {
-		$('#container1').html('<div><img class="center-block" src="http://130.233.42.186:3000/images/calendar365.png" style="align-center"/></div>');
+		$('#container1').html('<div><img class="center-block" src="http://130.233.42.186:8080/images/calendar365.png" style="align-center"/></div>');
 
 		$('#container').html('<h2>Edit Event</h2><form><input id="inputDate" type="date" placeholder="Date" required autofocus="autofocus" value="'+data[0].date+'"/><input id="inputStarttime" type="time" placeholder="Start Time" required value="'+data[0].starttime+'"/><input id="inputEndtime" type="time" placeholder="End Time" required value="'+data[0].endtime+'"/><input id="inputDescription" type="text" placeholder="Description" required value="'+data[0].description+'" size="64" class="text-left new-account"/><input id="inputPlace" type="text" placeholder="Location" required autofocus="autofocus" value="'+data[0].place+'" size="40" class="text-left new-account"/><button id="btnEditevent" type="submit" class="text-center new-account">Edit Event</button><br/><span class="clearfix"></span></form>');	
 
@@ -43,7 +43,7 @@ function editEvent(event) {
 		$.ajax({
 			type: 'PUT',
 			data: editevent,
-			url: 'http://130.233.42.186:3000/save_editevent/'+eventID
+			url: 'http://130.233.42.186:8080/save_editevent/'+eventID
 		}).done(function( response ) {
 			if (response.success) {
 				window.location.href = response.url;

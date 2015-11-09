@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function() {
-	$('#container').html('<div><img class="center-block" src="http://130.233.42.186:3000/images/calendar365.png" style="align-center"/></div>');
+	$('#container').html('<div><img class="center-block" src="http://130.233.42.186:8080/images/calendar365.png" style="align-center"/></div>');
 	$.getJSON( '/eventlist', function( data ) {
 
 		var events = [];
