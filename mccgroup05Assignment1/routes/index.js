@@ -90,7 +90,7 @@ module.exports = function(passport){
 		}
 		else {
 			//res.render('home', { "user": req.user, "events": events});
-			res.json({ "error_message": false, "user": req.user, "events": events}); // new addition
+			res.json({ "error_message": false, "message": 'Hello', "user": req.user, "events": events}); // new addition
 		}
     });
   });
