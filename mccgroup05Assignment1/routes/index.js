@@ -31,7 +31,7 @@ module.exports = function(passport){
   // Index Page
   router.get('/', function(req, res) {
     //res.render('index', { message: req.flash('message') });
-	res.json({message: "Provide username & password", error_message: req.flash('message')}); // new addition
+	res.json({message: "Provide username & password", error_message: true}); // new addition
   });
   
   // Search Page
@@ -73,7 +73,7 @@ module.exports = function(passport){
   // Signup Get
   router.get('/signup', function(req, res){
     //res.render('register',{message: req.flash('message')});
-	res.json({message:"Enter User Credentials i.e. username, firstname, lastname, email, password", error_message: req.flash('message')});
+	res.json({message:"Enter User Credentials i.e. username, firstname, lastname, email, password", error_message: true});
   });
   
   // Signup Post 
@@ -90,7 +90,7 @@ module.exports = function(passport){
 		}
 		else {
 			//res.render('home', { "user": req.user, "events": events});
-			res.json({ "user": req.user, "events": events}); // new addition
+			res.json({ "error_message": false, "user": req.user, "events": events}); // new addition
 		}
     });
   });
