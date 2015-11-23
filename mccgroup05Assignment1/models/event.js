@@ -8,5 +8,6 @@ module.exports = mongoose.model('Event',{
 	endtime: String,
 	description: String,
 	place: String,
-	userid: String
+	userid: String,
+	googleeventid: String
 });

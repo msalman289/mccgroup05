@@ -97,13 +97,12 @@ module.exports = function(passport){
 
   // Signout
   router.get('/signout', function(req, res) {
-	//console.log(req);
     req.logout();
     res.redirect('/');
   });
   
   // adduserevent.
-  router.post('/adduserevent', function(req, res) {
+  router.post('/adduserevent', isValid, function(req, res) {
   	var newEvent = new Event();
 	newEvent.date = req.body.date; 
 	newEvent.starttime = req.body.starttime;
@@ -111,13 +110,12 @@ module.exports = function(passport){
 	newEvent.place = req.body.place;
 	newEvent.description = req.body.description;
 	newEvent.userid = req.user._id;
+	newEvent.googleeventid = "";
 	newEvent.save(function(err,events) {
 		if (err) {
 			console.log(err);
 		}
 		else {
-			//console.log("hello world");
-			//res.redirect("home");
 			res.json(events);
 		}
 	});
