@@ -168,5 +168,24 @@ module.exports = function(passport){
 	});
   });
   
+  // Get valid events Information
+  router.get('/eventlist', function(req, res) { 
+	if(req.user) {	
+		var query = Event.find({userid: req.body.userid});
+		query.sort({date: 'asc'});
+		query.exec(function(err, events){
+			if (err) {
+				console.log(err);
+			}
+			else {
+				res.json(events);
+			}
+		});
+	}
+	else {
+		res.json({});
+	}
+  });
+  
   return router;
 }
