@@ -169,8 +169,8 @@ module.exports = function(passport){
   });
   
   // Get valid events Information
-  router.get('/eventlist/:id', function(req, res) { 
-	var query = Event.find({userid: req.params.id});
+  router.get('/eventlist', function(req, res) { 
+	var query = Event.find({userid: req.query.userid});
 	query.sort({date: 'asc'});
 	query.exec(function(err, events){
 		if (err) {
