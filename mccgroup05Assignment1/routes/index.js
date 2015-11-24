@@ -35,7 +35,7 @@ module.exports = function(passport){
   });
   
   // Search Page
-  router.get('/search', isValid, function(req, res) {
+  router.get('/search', function(req, res) {
     var testSearchRes = Event.find();
     testSearchRes.where('userid').equals(req.user._id);
     if(req.query.fromdate) {
@@ -80,7 +80,7 @@ module.exports = function(passport){
   router.post('/signup', passport.authenticate('signup', { successRedirect: '/home', failureRedirect: '/signup', failureFlash : true }));
  
   // Home Page
-  router.get('/home', isValid, function(req, res){
+  router.get('/home', function(req, res){
 	var query = Event.find({userid: req.user._id});
 	query.where('date').gte(new Date().toISOString());
 	query.sort({date: 'asc'});
@@ -102,14 +102,14 @@ module.exports = function(passport){
   });
   
   // adduserevent.
-  router.post('/adduserevent', isValid, function(req, res) {
+  router.post('/adduserevent', function(req, res) {
   	var newEvent = new Event();
 	newEvent.date = req.body.date; 
 	newEvent.starttime = req.body.starttime;
 	newEvent.endtime = req.body.endtime;
 	newEvent.place = req.body.place;
 	newEvent.description = req.body.description;
-	newEvent.userid = req.user._id;
+	newEvent.userid = req.body.userid;
 	newEvent.googleeventid = "";
 	newEvent.save(function(err,events) {
 		if (err) {
