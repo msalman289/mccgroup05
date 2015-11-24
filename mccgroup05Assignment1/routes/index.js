@@ -169,23 +169,17 @@ module.exports = function(passport){
   });
   
   // Get valid events Information
-  router.get('/eventlist', function(req, res) { 
-	if(req.user) {	
-		var query = Event.find({userid: req.body.userid});
-		query.sort({date: 'asc'});
-		query.exec(function(err, events){
-			if (err) {
-				console.log(err);
-			}
-			else {
-				res.json({"events": events});
-			}
-		});
-	}
-	else {
-		res.json({});
-	}
+  router.get('/eventlist/:id', function(req, res) { 
+	var query = Event.find({userid: req.params.id});
+	query.sort({date: 'asc'});
+	query.exec(function(err, events){
+		if (err) {
+			console.log(err);
+		}
+		else {
+			res.json({"events": events});
+		}
+	});
   });
-  
   return router;
 }
