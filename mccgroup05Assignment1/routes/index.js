@@ -178,7 +178,7 @@ module.exports = function(passport){
 				console.log(err);
 			}
 			else {
-				res.json(events);
+				res.json({"events": events});
 			}
 		});
 	}
