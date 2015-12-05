@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context=".LoginActivity" >
+
+    <ImageView
+        android:id="@+id/imageView365"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="#3f7ced"
+        android:layout_gravity="center"
+        android:src="@drawable/calendar_logo" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:id="@+id/username"
+                android:hint="username"/>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="250dp"
+                android:layout_gravity="center"
+                android:layout_height="60dp"
+                android:inputType="textPassword"
+                android:hint="password"/>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/loginbtn"
+                android:background="@drawable/btn_back"
+                android:textColor="#ffffff"
+                android:textAlignment="center"
+                android:text="Login"
+                android:clickable="true"/>
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal" >
+
+
+
+                <Button
+                    android:layout_width="250dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/register"
+                    android:background="@drawable/btn_back_blue"
+                    android:textColor="#ffffff"
+                    android:textAlignment="center"
+                    android:text="Register"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

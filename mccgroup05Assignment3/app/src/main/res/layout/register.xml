@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context=".LoginActivity" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="#3f7ced"
+        android:src="@drawable/calendar_logo" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:id="@+id/email"
+                android:layout_marginTop="10dp"
+                android:hint="example@mail.com"/>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:inputType="textPassword"
+                android:hint="password"/>
+
+            <EditText
+                android:id="@+id/firstName"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:hint="First Name"/>
+
+            <EditText
+                android:id="@+id/lastName"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:hint="Last Name"/>
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:hint="Username"/>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:id="@+id/registerbtn"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_back"
+                android:textColor="#ffffff"
+                android:textAlignment="center"
+                android:text="Register"
+                android:clickable="true"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

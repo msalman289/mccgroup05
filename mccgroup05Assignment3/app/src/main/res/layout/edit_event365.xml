@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#e9e8dd"
+    tools:context=".AddEvnt" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="#3f7ced"
+        android:src="@drawable/calendar_logo" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/editetxt_date"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:hint="Date: 'YYYY-MM-DD'"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight=".5" />
+
+            <EditText
+                android:id="@+id/editstarttime"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:hint="Start Time: 'HH:MM'"/>
+
+            <EditText
+                android:id="@+id/editendtime"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:hint="End Time: 'HH:MM'"/>
+
+            <EditText
+                android:id="@+id/editdescription"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:hint="Description"/>
+
+            <EditText
+                android:id="@+id/editlocation"
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:inputType="text"
+                android:hint="Location"/>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:id="@+id/editbtn"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_add"
+                android:textColor="#ffffff"
+                android:textAlignment="center"
+                android:text="Edit Event"
+                android:clickable="true"/>
+
+            <Button
+                android:layout_marginTop="7dp"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:id="@+id/discardEditbtn"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_discard"
+                android:textColor="#ffffff"
+                android:textAlignment="center"
+                android:text="Discard Changes"
+                android:clickable="true"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

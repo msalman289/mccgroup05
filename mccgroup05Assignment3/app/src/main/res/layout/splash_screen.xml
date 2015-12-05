@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ViewPager"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/TextView00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#3f7ced"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Welcome to Calendar 365"
+        android:gravity="center_vertical"
+        android:layout_gravity="center" />
+
+    <LinearLayout android:id="@+id/LinearLayout01"
+        android:layout_width="162dp"
+        android:layout_height="162dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/calendar_logo"
+        android:layout_gravity="center">
+    </LinearLayout>
+
+</LinearLayout>
